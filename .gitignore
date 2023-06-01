@@ -433,3 +433,4 @@ FodyWeavers.xsd
 
 *.dSYM/
 /out/
+.DS_Store
