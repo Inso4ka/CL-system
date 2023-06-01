@@ -10,9 +10,22 @@
                 "-g",
                 "client/main.cpp",
                 "-o",
-                "out/client"
+                "out/client",
+                "-I",
+                "/opt/homebrew/Cellar/boost/1.81.0_1/include/",
+                "-L",
+                "/opt/homebrew/Cellar/boost/1.81.0_1/lib",
+                "-I",
+                "/opt/homebrew/Cellar/sqlite/3.41.2/include/",
+                "-L",
+                "/opt/homebrew/Cellar/sqlite/3.41.2/lib/",
+                "-lsqlite3"
             ],
             "options": {
+                "env": {
+                    "DYLD_LIBRARY_PATH": "/opt/homebrew/Cellar/sqlite/3.41.2/lib/",
+                    "LIBRARY_PATH": "/opt/homebrew/Cellar/boost/1.81.0_1/lib"
+                },
                 "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
@@ -32,9 +45,22 @@
                 "-g",
                 "server/main.cpp",
                 "-o",
-                "out/server"
+                "out/server",
+                "-I",
+                "/opt/homebrew/Cellar/boost/1.81.0_1/include/",
+                "-L",
+                "/opt/homebrew/Cellar/boost/1.81.0_1/lib",
+                "-I",
+                "/opt/homebrew/Cellar/sqlite/3.41.2/include/",
+                "-L",
+                "/opt/homebrew/Cellar/sqlite/3.41.2/lib/",
+                "-lsqlite3"
             ],
             "options": {
+                "env": {
+                    "DYLD_LIBRARY_PATH": "/opt/homebrew/Cellar/sqlite/3.41.2/lib/",
+                    "LIBRARY_PATH": "/opt/homebrew/Cellar/boost/1.81.0_1/lib"
+                },
                 "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
