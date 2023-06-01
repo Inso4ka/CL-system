@@ -430,3 +430,5 @@ FodyWeavers.xsd
 *.exe
 *.out
 *.app
+
+*.dSYM/
