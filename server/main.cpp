@@ -25,15 +25,12 @@ class SecurityDatabase
             }
         }
     }
-
     ~SecurityDatabase() {
         if (m_db) {
             sqlite3_close(m_db);
             m_db = nullptr;
         }
     }
-
-    static int count;
 
     bool update_security_condition(bool value) {
         const char* condition    = value ? "1" : "0"; // заменили "true" и "false" на 1 и 0 соответственно
