@@ -41,17 +41,57 @@ int main() {
     boost::system::error_code error;
 
     size_t      bytes_transferred = 0;
-    std::string commands[]        = {"light", "security", "temperature", "show"};
+    std::string commands[]        = {"living_room", "kitchen", "bathroom", "security", "temperature", "show", "turnoff"};
     while (isRunning) {
         std::cout << "Choose an option: ";
         std::cin >> s;
+        bool isGoing = true;
+        int  n       = 0;
 
         switch (s) {
             case 1:
-                std::cout << "1";
+                while (isGoing) {
+                    std::cout << "Turn on light\n"
+                              << "1. living room\n"
+                              << "2. kitchen\n"
+                              << "3. bathroom\n"
+                              << "4. turn off light\n"
+                              << "5. cancel\n\n";
+                    std::cout << "Choose a place to turn on/off the light: ";
+                    std::cin >> n;
+                    switch (n) {
+                        case 1:
+                            handle_command(socket, commands[0]);
+                            break;
+                        case 2:
+                            handle_command(socket, commands[1]);
+                            break;
+                        case 3:
+                            handle_command(socket, commands[2]);
+                            break;
+                        case 4:
+                            handle_command(socket, commands[6]);
+                            break;
+                        case 5:
+                            isGoing = false;
+                            std::cout << "Canceling the operation.\n\n";
+                            std::cout
+                                << "Welcome to our smart home system. With our app, you can control the temperature, adjust the lighting, and keep your home safe and secure.\n\n"
+                                << "1. on/off light\n"
+                                << "2. on/off security\n"
+                                << "3. control temperature\n"
+                                << "4. show conditions\n"
+                                << "5. exit\n\n";
+                            break;
+                        default:
+                            std::cout << "Invalid option.\n";
+                            break;
+                    }
+                }
+
                 break;
             case 2:
-                handle_command(socket, commands[1]);
+                handle_command(socket, commands[3]);
                 break;
             case 3:
                 int num;
@@ -63,10 +103,10 @@ int main() {
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                     }
                 } while (num < -10 || num > 40);
-                handle_command(socket, commands[2] + std::to_string(num));
+                handle_command(socket, commands[4] + std::to_string(num));
                 break;
             case 4:
-                handle_command(socket, commands[3]);
+                handle_command(socket, commands[5]);
                 break;
             case 5:
                 socket.close();
