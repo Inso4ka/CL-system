@@ -9,13 +9,13 @@
                 "-std=c++17",
                 "-g",
                 "-I/opt/homebrew/Cellar/boost/1.81.0_1/include/",
-                "-I/opt/homebrew/Cellar/sqlite/3.41.2/include/",
+                "-I/opt/homebrew/Cellar/sqlite/3.42.0/include/",
                 "-o",
                 "out/client",
                 "client/main.cpp",
                 "client/client.cpp",
                 "-L/opt/homebrew/Cellar/boost/1.81.0_1/lib",
-                "-L/opt/homebrew/Cellar/sqlite/3.41.2/lib/",
+                "-L/opt/homebrew/Cellar/sqlite/3.42.0/lib/",
                 "-lsqlite3"
             ],
             "options": {
@@ -41,7 +41,7 @@
                 "-std=c++17",
                 "-g",
                 "-I/opt/homebrew/Cellar/boost/1.81.0_1/include/",
-                "-I/opt/homebrew/Cellar/sqlite/3.41.2/include/",
+                "-I/opt/homebrew/Cellar/sqlite/3.42.0/include/",
                 "-o",
                 "out/server",
                 "server/main.cpp",
@@ -49,12 +49,12 @@
                 "server/securityDatabase.cpp",
                 "server/temperatureDatabase.cpp",
                 "-L/opt/homebrew/Cellar/boost/1.81.0_1/lib",
-                "-L/opt/homebrew/Cellar/sqlite/3.41.2/lib/",
+                "-L/opt/homebrew/Cellar/sqlite/3.42.0/lib/",
                 "-lsqlite3"
             ],
             "options": {
                 "env": {
-                    "DYLD_LIBRARY_PATH": "/opt/homebrew/Cellar/sqlite/3.41.2/lib/",
+                    "DYLD_LIBRARY_PATH": "/opt/homebrew/Cellar/sqlite/3.42.0/lib/",
                     "LIBRARY_PATH": "/opt/homebrew/Cellar/boost/1.81.0_1/lib"
                 },
                 "cwd": "${workspaceFolder}"

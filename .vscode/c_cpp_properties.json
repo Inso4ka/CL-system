@@ -6,8 +6,8 @@
                 "${workspaceFolder}/**",
                 "/opt/homebrew/Cellar/boost/1.81.0_1/include/",
                 "/opt/homebrew/Cellar/boost/1.81.0_1/lib",
-                "/opt/homebrew/Cellar/sqlite/3.41.2/include/",
-                "/opt/homebrew/Cellar/sqlite/3.41.2/lib/"
+                "/opt/homebrew/Cellar/sqlite/3.42.0/include/",
+                "/opt/homebrew/Cellar/sqlite/3.42.0/lib/"
             ],
             "defines": [],
             "macFrameworkPath": [
