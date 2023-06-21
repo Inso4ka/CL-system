@@ -27,5 +27,6 @@ class SmartHomeSystem
     void        handle_security();
     void        handle_temperature();
     void        handle_show_conditions();
+    void        handle_column();
     void        handle_command(const std::string& command);
 };

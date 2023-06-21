@@ -48,6 +48,7 @@
                 "server/lightDatabase.cpp",
                 "server/securityDatabase.cpp",
                 "server/temperatureDatabase.cpp",
+                "server/columnDatabase.cpp",
                 "-L/opt/homebrew/Cellar/boost/1.81.0_1/lib",
                 "-L/opt/homebrew/Cellar/sqlite/3.42.0/lib/",
                 "-lsqlite3"

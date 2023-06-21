@@ -16,8 +16,9 @@ void SmartHomeSystem::start() {
               << "1. on/off light\n"
               << "2. on/off security\n"
               << "3. control temperature\n"
-              << "4. show conditions\n"
-              << "5. exit\n\n";
+              << "4. on/off column\n"
+              << "5. show conditions\n"
+              << "6. exit\n\n";
 
     bool is_running = true;
     int  option;
@@ -40,9 +41,12 @@ void SmartHomeSystem::start() {
                 handle_temperature();
                 break;
             case 4:
-                handle_show_conditions();
+                handle_column();
                 break;
             case 5:
+                handle_show_conditions();
+                break;
+            case 6:
                 is_running = false;
                 std::cout << "Exiting the app.\n";
                 break;
@@ -109,6 +113,11 @@ void SmartHomeSystem::handle_light() {
                 break;
         }
     }
+}
+
+// Реализация обработчика для управления колонкой
+void SmartHomeSystem::handle_column() {
+    handle_command("column");
 }
 
 // Реализация обработчика для управления системой безопасности

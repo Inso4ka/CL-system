@@ -1,3 +1,4 @@
+#include "columnDatabase.h"
 #include "lightDatabase.h"
 #include "securityDatabase.h"
 #include "temperatureDatabase.h"
@@ -11,6 +12,7 @@ void handle_connection(tcp::socket& socket) {
 
     SecurityDatabase    s_db("security.db");
     TemperatureDatabase t_db("temperature.db");
+    ColumnDatabase      c_db("column.db");
     LightDatabase       l_db("light.db");
 
     // Keep reading from the socket until the client closes the connection
@@ -38,8 +40,9 @@ void handle_connection(tcp::socket& socket) {
                         l_db.update_condition("Bathroom", 0);
                         l_db.update_condition("Kitchen", 0);
                         l_db.update_condition("Living room", 0);
-                        t_db.update_security_condition(25);
-                        response = "All light was turned off. \nThe temperature was set to 20. \nSecurity condition updated successfully: " +
+                        t_db.update_security_condition(20);
+                        c_db.update_column_condition(0);
+                        response = "All light was turned off. \nThe temperature was set to 20. \nColumn was turned off. \nSecurity condition updated successfully: " +
                                    std::string(s_db.is_security_enabled() ? "on" : "off") + ".";
                     } else {
                         response = "Security condition updated successfully: " + std::string(s_db.is_security_enabled() ? "on" : "off") + ".";
@@ -77,6 +80,14 @@ void handle_connection(tcp::socket& socket) {
             } else {
                 std::cout << "Failed to open database" << std::endl;
             }
+        } else if (message == "column") {
+            if (c_db.is_open()) {
+                if (c_db.update_column_condition(!c_db.is_column_enabled())) {
+                    response = "Column condition updated successfully: " + std::string(c_db.is_column_enabled() ? "on" : "off") + ".";
+                } else {
+                    response = "Failed to update column condition\n";
+                }
+            }
         } else if (message == "bathroom") {
             if (l_db.is_open()) {
                 if (l_db.update_condition("Bathroom", !l_db.is_light_enabled("Bathroom"))) {
@@ -96,6 +107,7 @@ void handle_connection(tcp::socket& socket) {
         } else if (message == "show") {
             response = "\nSecurity system: " + std::string(s_db.is_security_enabled() ? "on" : "off") + ".\n" +
                        "Temperature: " + std::to_string(t_db.get_temperature_from_database()) + ".\n" +
+                       "Column: " + std::string(c_db.is_column_enabled() ? "on" : "off") + ".\n" +
                        "Living room: " + std::string(l_db.is_light_enabled("Living room") ? "on" : "off") + ".\n" +
                        "Kitchen: " + std::string(l_db.is_light_enabled("Kitchen") ? "on" : "off") + ".\n" +
                        "Bathroom: " + std::string(l_db.is_light_enabled("Bathroom") ? "on" : "off") + ".\n";
