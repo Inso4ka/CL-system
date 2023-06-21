@@ -1,7 +1,7 @@
-#include <boost/asio.hpp>
 #include "lightDatabase.h"
 #include "securityDatabase.h"
 #include "temperatureDatabase.h"
+#include <boost/asio.hpp>
 
 using boost::asio::ip::tcp;
 
@@ -34,8 +34,16 @@ void handle_connection(tcp::socket& socket) {
         if (message == "security") {
             if (s_db.is_open()) {
                 if (s_db.update_security_condition(!s_db.is_security_enabled())) {
-                    response = "Security condition updated successfully: " + std::string(s_db.is_security_enabled() ? "on" : "off") + ".";
-
+                    if (s_db.is_security_enabled()) {
+                        l_db.update_condition("Bathroom", 0);
+                        l_db.update_condition("Kitchen", 0);
+                        l_db.update_condition("Living room", 0);
+                        t_db.update_security_condition(25);
+                        response = "All light was turned off. \nThe temperature was set to 20. \nSecurity condition updated successfully: " +
+                                   std::string(s_db.is_security_enabled() ? "on" : "off") + ".";
+                    } else {
+                        response = "Security condition updated successfully: " + std::string(s_db.is_security_enabled() ? "on" : "off") + ".";
+                    }
                 } else {
                     response = "Failed to update security condition\n";
                 }
