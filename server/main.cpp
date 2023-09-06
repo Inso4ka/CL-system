@@ -5,7 +5,6 @@
 #include <boost/asio.hpp>
 
 using boost::asio::ip::tcp;
-
 void handle_connection(tcp::socket& socket) {
     std::array<char, 256>     buffer;
     boost::system::error_code error;
