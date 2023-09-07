@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QtConcurrent/QtConcurrent>
 #include "client/client.h"
 #include "connection.h"
 

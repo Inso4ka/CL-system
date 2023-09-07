@@ -43,5 +43,9 @@ void MainWindow::on_m_security_btn_clicked()
         QMessageBox::critical(nullptr, "Error", "To begin, you must connect to the server.");
         return;
     }
-    system.start();
+
+    QFuture<std::string> future = QtConcurrent::run([&]() { return system.start(); });
+    future.waitForFinished();
+    std::string response = future.result();
+    QMessageBox::information(this, "Notification", QString::fromStdString(response));
 }

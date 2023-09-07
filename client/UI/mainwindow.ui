@@ -423,24 +423,30 @@ QPushButton:pressed {
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>201</x>
        <y>10</y>
-       <width>131</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0,0">
       <property name="spacing">
-       <number>-1</number>
+       <number>8</number>
       </property>
       <property name="sizeConstraint">
-       <enum>QLayout::SetMaximumSize</enum>
+       <enum>QLayout::SetNoConstraint</enum>
       </property>
       <property name="rightMargin">
        <number>0</number>
       </property>
       <item>
        <widget class="QPushButton" name="m_notification_btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="font">
          <font>
           <kerning>true</kerning>

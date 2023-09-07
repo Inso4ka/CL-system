@@ -13,7 +13,7 @@ public:
     explicit SmartHomeSystem(boost::asio::io_service &io_service);
     bool checkConnection(const std::string &ip, const std::string &port);
     void run();
-    void start();
+    std::string start();
     bool getCondition();
 
 private:
@@ -31,5 +31,5 @@ private:
     void        handle_temperature();
     void        handle_show_conditions();
     void        handle_column();
-    void        handle_command(const std::string& command);
+    std::string handle_command(const std::string &command);
 };

@@ -55,8 +55,9 @@ bool SmartHomeSystem::getCondition()
 }
 
 // Реализация метода start()
-void SmartHomeSystem::start() {
-    handle_security();
+std::string SmartHomeSystem::start()
+{
+    return handle_command("security");
 }
 
 // Функция чтения ответа от сервера
@@ -147,10 +148,11 @@ void SmartHomeSystem::handle_show_conditions() {
 }
 
 // Реализация общего обработчика команд
-void SmartHomeSystem::handle_command(const std::string& command) {
+std::string SmartHomeSystem::handle_command(const std::string &command)
+{
     // Отправляем команду на сервер
     boost::asio::write(m_socket, boost::asio::buffer(command));
     // Ждем ответа и выводим его в консоль
     std::string response = receive_response();
-    std::cout << response << std::endl;
+    return response;
 }
