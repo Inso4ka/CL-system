@@ -20,6 +20,7 @@ void SmartHomeSystem::run()
 
 bool SmartHomeSystem::checkConnection(const std::string &ip, const std::string &port)
 {
+    m_condition = false;
     // Проверка корректности IP-адреса
     boost::system::error_code ipAddressError;
     boost::asio::ip::address_v4::from_string(ip, ipAddressError);
@@ -40,11 +41,17 @@ bool SmartHomeSystem::checkConnection(const std::string &ip, const std::string &
     try {
         m_endpoints = m_resolver.resolve(boost::asio::ip::tcp::v4(), ip, std::to_string(portNumber));
         boost::asio::connect(m_socket, m_endpoints);
+        m_condition = true;
         return true;
     } catch (const boost::system::system_error &e) {
         std::cerr << "Cannot establish connection: " << e.what() << std::endl;
         return false;
     }
+}
+
+bool SmartHomeSystem::getCondition()
+{
+    return m_condition;
 }
 
 // Реализация метода start()

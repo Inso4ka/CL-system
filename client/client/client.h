@@ -14,12 +14,14 @@ public:
     bool checkConnection(const std::string &ip, const std::string &port);
     void run();
     void start();
+    bool getCondition();
 
 private:
     // Объекты для работы с сокетами, резолвером и сетевыми точками
-    tcp::socket                 m_socket;
+    tcp::socket m_socket;
     tcp::resolver               m_resolver;
     tcp::resolver::results_type m_endpoints;
+    bool m_condition;
 
     // Методы для обработки различных опций в приложении
 

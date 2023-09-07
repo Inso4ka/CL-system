@@ -39,5 +39,9 @@ void MainWindow::on_m_settings_btn_clicked()
 
 void MainWindow::on_m_security_btn_clicked()
 {
+    if (!system.getCondition()) {
+        QMessageBox::critical(nullptr, "Error", "To begin, you must connect to the server.");
+        return;
+    }
     system.start();
 }
