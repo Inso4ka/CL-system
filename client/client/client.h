@@ -8,20 +8,21 @@ using boost::asio::ip::tcp; // Пространство имен для рабо
 // Определение класса SmartHomeSystem
 class SmartHomeSystem
 {
-  public:
+public:
     // Конструктор класса с передачей объекта io_service по ссылке
-    explicit SmartHomeSystem(boost::asio::io_service& io_service);
-    // Метод для запуска приложения
+    explicit SmartHomeSystem(boost::asio::io_service &io_service);
+    bool checkConnection(const std::string &ip, const std::string &port);
     void run();
+    void start();
 
-  private:
+private:
     // Объекты для работы с сокетами, резолвером и сетевыми точками
     tcp::socket                 m_socket;
     tcp::resolver               m_resolver;
     tcp::resolver::results_type m_endpoints;
 
     // Методы для обработки различных опций в приложении
-    void        start();
+
     std::string receive_response();
     void        handle_light();
     void        handle_security();

@@ -50,9 +50,9 @@ border-radius: 10px;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>0</y>
+       <y>-10</y>
        <width>111</width>
-       <height>71</height>
+       <height>81</height>
       </rect>
      </property>
      <property name="font">
@@ -69,9 +69,9 @@ border-radius: 10px;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>45</y>
+       <y>35</y>
        <width>151</width>
-       <height>41</height>
+       <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -81,75 +81,7 @@ border-radius: 10px;</string>
       <string>Welcome back, owner!</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>20</y>
-       <width>31</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    background-color: rgb(64,64,64);
-    border-radius: 10px; /* закругление краев */
-    padding: 10px; /* добавим немного отступа вокруг кнопки */
-    color: white; /* белый цвет текста */
-}
-
-QPushButton:hover {
-    background-color: rgb(128,128,128);
-}
-
-QPushButton:pressed {
-    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
-}
-</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="res.qrc">
-       <normaloff>:/icons/exit.png</normaloff>:/icons/exit.png</iconset>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>20</y>
-       <width>31</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    background-color: rgb(64,64,64);
-    border-radius: 10px; /* закругление краев */
-    padding: 10px; /* добавим немного отступа вокруг кнопки */
-    color: white; /* белый цвет текста */
-}
-
-QPushButton:hover {
-    background-color: rgb(128,128,128);
-}
-
-QPushButton:pressed {
-    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
-}
-</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="res.qrc">
-       <normaloff>:/icons/bell.png</normaloff>:/icons/bell.png</iconset>
-     </property>
-    </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -167,7 +99,7 @@ QPushButton:pressed {
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="m_security">
+           <widget class="QPushButton" name="m_security_btn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
               <horstretch>0</horstretch>
@@ -201,7 +133,7 @@ QPushButton:pressed {
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="res.qrc">
+             <iconset resource="../res.qrc">
               <normaloff>:/icons/security.png</normaloff>:/icons/security.png</iconset>
             </property>
             <property name="iconSize">
@@ -264,7 +196,7 @@ QPushButton:pressed {
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="res.qrc">
+             <iconset resource="../res.qrc">
               <normaloff>:/icons/temperature.png</normaloff>:/icons/temperature.png</iconset>
             </property>
             <property name="iconSize">
@@ -331,7 +263,7 @@ QPushButton:pressed {
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="res.qrc">
+             <iconset resource="../res.qrc">
               <normaloff>:/icons/light.png</normaloff>:/icons/light.png</iconset>
             </property>
             <property name="iconSize">
@@ -394,7 +326,7 @@ QPushButton:pressed {
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="res.qrc">
+             <iconset resource="../res.qrc">
               <normaloff>:/icons/music.png</normaloff>:/icons/music.png</iconset>
             </property>
             <property name="iconSize">
@@ -461,7 +393,7 @@ QPushButton:pressed {
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="res.qrc">
+             <iconset resource="../res.qrc">
               <normaloff>:/icons/all.png</normaloff>:/icons/all.png</iconset>
             </property>
             <property name="iconSize">
@@ -488,11 +420,124 @@ QPushButton:pressed {
       </item>
      </layout>
     </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>10</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="spacing">
+       <number>-1</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMaximumSize</enum>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="m_notification_btn">
+        <property name="font">
+         <font>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/icons/bell.png</normaloff>:/icons/bell.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="m_settings_btn">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/icons/options.png</normaloff>:/icons/options.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="m_exit_btn">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/icons/exit.png</normaloff>:/icons/exit.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
   </widget>
  </widget>
  <resources>
-  <include location="res.qrc"/>
+  <include location="../res.qrc"/>
  </resources>
  <connections/>
 </ui>

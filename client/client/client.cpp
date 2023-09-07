@@ -1,60 +1,55 @@
 #include "client.h"
 
 // Конструктор
-SmartHomeSystem::SmartHomeSystem(boost::asio::io_service& io_service) : m_socket(io_service), m_resolver(io_service), m_endpoints(m_resolver.resolve("localhost", "1234")) { }
+SmartHomeSystem::SmartHomeSystem(boost::asio::io_service &io_service)
+    : m_socket(io_service)
+    , m_resolver(io_service)
+{}
 
 // Реализация метода run()
-void SmartHomeSystem::run() {
-    boost::asio::connect(m_socket, m_endpoints);
-    start();
+void SmartHomeSystem::run()
+{
+    try {
+        boost::asio::connect(m_socket, m_endpoints);
+        start();
+    } catch (const boost::system::system_error &e) {
+        std::cerr << "Error connecting to the server: " << e.what() << std::endl;
+        // Дополнительная обработка ошибки, включая повторную попытку подключения или вывод сообщения пользователю
+    }
+}
+
+bool SmartHomeSystem::checkConnection(const std::string &ip, const std::string &port)
+{
+    // Проверка корректности IP-адреса
+    boost::system::error_code ipAddressError;
+    boost::asio::ip::address_v4::from_string(ip, ipAddressError);
+    if (ipAddressError) {
+        std::cerr << "Invalid IP address: " << ip << std::endl;
+        return false;
+    }
+
+    // Проверка корректности порта
+    unsigned short portNumber = 0;
+    try {
+        portNumber = std::stoul(port);
+    } catch (const std::exception &e) {
+        std::cerr << "Invalid port number: " << port << std::endl;
+        return false;
+    }
+
+    try {
+        m_endpoints = m_resolver.resolve(boost::asio::ip::tcp::v4(), ip, std::to_string(portNumber));
+        boost::asio::connect(m_socket, m_endpoints);
+        return true;
+    } catch (const boost::system::system_error &e) {
+        std::cerr << "Cannot establish connection: " << e.what() << std::endl;
+        return false;
+    }
 }
 
 // Реализация метода start()
 void SmartHomeSystem::start() {
-    // Выводим доступные опции пользователю
-    std::cout << "Welcome to our smart home system. With our app, you can control the temperature, adjust the lighting, and keep your home safe and secure.\n\n"
-              << "1. on/off light\n"
-              << "2. on/off security\n"
-              << "3. control temperature\n"
-              << "4. on/off column\n"
-              << "5. show conditions\n"
-              << "6. exit\n\n";
-
-    bool is_running = true;
-    int  option;
-
-    // Запускаем цикл выбора опций, пока пользователь не выберет выход
-    while (is_running) {
-        std::cout << "Choose an option: ";
-        std::cin >> option;
-
-        switch (option) {
-            // Обрабатываем опции для управления освещением, системой безопасности, температурой и прочими функциями
-            // Выходим из цикла при выборе опции выхода
-            case 1:
-                handle_light();
-                break;
-            case 2:
-                handle_security();
-                break;
-            case 3:
-                handle_temperature();
-                break;
-            case 4:
-                handle_column();
-                break;
-            case 5:
-                handle_show_conditions();
-                break;
-            case 6:
-                is_running = false;
-                std::cout << "Exiting the app.\n";
-                break;
-            default:
-                std::cout << "Invalid option.\n";
-                break;
-        }
-    }
+    handle_security();
 }
 
 // Функция чтения ответа от сервера
