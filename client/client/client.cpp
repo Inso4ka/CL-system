@@ -6,18 +6,6 @@ SmartHomeSystem::SmartHomeSystem(boost::asio::io_service &io_service)
     , m_resolver(io_service)
 {}
 
-// Реализация метода run()
-void SmartHomeSystem::run()
-{
-    try {
-        boost::asio::connect(m_socket, m_endpoints);
-        start();
-    } catch (const boost::system::system_error &e) {
-        std::cerr << "Error connecting to the server: " << e.what() << std::endl;
-        // Дополнительная обработка ошибки, включая повторную попытку подключения или вывод сообщения пользователю
-    }
-}
-
 bool SmartHomeSystem::checkConnection(const std::string &ip, const std::string &port)
 {
     m_condition = false;
@@ -55,9 +43,18 @@ bool SmartHomeSystem::getCondition()
 }
 
 // Реализация метода start()
-std::string SmartHomeSystem::start()
+std::string SmartHomeSystem::start(const std::string &str)
 {
-    return handle_command("security");
+    if (str == "security")
+        return handle_command(str);
+    else if (str == "column")
+        return handle_command(str);
+    else if (str == "show")
+        return handle_command(str);
+    else if (str.find("temperature") != std::string::npos)
+        return handle_command(str);
+
+    return "";
 }
 
 // Функция чтения ответа от сервера

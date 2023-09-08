@@ -12,8 +12,7 @@ public:
     // Конструктор класса с передачей объекта io_service по ссылке
     explicit SmartHomeSystem(boost::asio::io_service &io_service);
     bool checkConnection(const std::string &ip, const std::string &port);
-    void run();
-    std::string start();
+    std::string start(const std::string &str);
     bool getCondition();
 
 private:

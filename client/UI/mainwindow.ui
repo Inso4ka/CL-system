@@ -162,7 +162,7 @@ QPushButton:pressed {
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="m_security_2">
+           <widget class="QPushButton" name="m_temperature_btn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
               <horstretch>0</horstretch>
@@ -292,7 +292,7 @@ QPushButton:pressed {
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="m_security_4">
+           <widget class="QPushButton" name="m_column_btn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
               <horstretch>0</horstretch>
@@ -359,7 +359,7 @@ QPushButton:pressed {
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="m_security_5">
+           <widget class="QPushButton" name="m_showall_btn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
               <horstretch>0</horstretch>

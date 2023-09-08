@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Temperature</class>
+ <widget class="QDialog" name="Temperature">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>290</width>
+    <height>147</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Temperature</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgba(41, 49, 51, 0);
+
+</string>
+  </property>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>291</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>261</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Temperature</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QSlider" name="m_temperature_sl">
+         <property name="maximum">
+          <number>35</number>
+         </property>
+         <property name="singleStep">
+          <number>1</number>
+         </property>
+         <property name="pageStep">
+          <number>1</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="tickPosition">
+          <enum>QSlider::TicksBelow</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="m_temperature_lbl">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="m_connect_btn">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Apply</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../res.qrc">
+           <normaloff>:/icons/connect.png</normaloff>:/icons/connect.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="m_cancel_btn">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Cancel</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../res.qrc">
+           <normaloff>:/icons/close.png</normaloff>:/icons/close.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
