@@ -3,6 +3,9 @@ TARGET = client
 CONFIG += c++17
 QT += widgets
 
+ICON = /Users/mac/Documents/Projects/cpp_projects/CL-system/main_icon/1.icns
+
+
 SOURCES += UI/main.cpp \
     UI/mainwindow.cpp \
     UI/connection.cpp \
