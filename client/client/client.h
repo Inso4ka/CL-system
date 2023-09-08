@@ -25,10 +25,5 @@ private:
     // Методы для обработки различных опций в приложении
 
     std::string receive_response();
-    void        handle_light();
-    void        handle_security();
-    void        handle_temperature();
-    void        handle_show_conditions();
-    void        handle_column();
     std::string handle_command(const std::string &command);
 };
