@@ -2,6 +2,7 @@
 #define TEMPERATURE_H
 
 #include <QDialog>
+#include <QMessageBox>
 
 namespace Ui {
 class Temperature;
@@ -27,7 +28,6 @@ private slots:
 
 private:
     Ui::Temperature *ui;
-    int m_value;
 };
 
 #endif // TEMPERATURE_H

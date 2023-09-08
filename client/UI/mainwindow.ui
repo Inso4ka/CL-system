@@ -229,7 +229,7 @@ QPushButton:pressed {
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="m_security_3">
+           <widget class="QPushButton" name="m_light_btn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
               <horstretch>0</horstretch>
@@ -426,7 +426,7 @@ QPushButton:pressed {
        <x>201</x>
        <y>10</y>
        <width>141</width>
-       <height>31</height>
+       <height>38</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0,0">

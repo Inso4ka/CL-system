@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Light</class>
+ <widget class="QDialog" name="Light">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>344</width>
+    <height>338</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Light</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgba(41, 49, 51, 0);</string>
+  </property>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>351</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>321</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 80);
+border-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_livingroom_btn">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>281</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string> Living room</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../res.qrc">
+      <normaloff>:/icons/living_room.png</normaloff>:/icons/living_room.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_bathroom_btn">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>110</y>
+      <width>281</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string> Bathroom</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../res.qrc">
+      <normaloff>:/icons/bathroom.png</normaloff>:/icons/bathroom.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_kitchen_btn">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>160</y>
+      <width>281</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string> Kitchen</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../res.qrc">
+      <normaloff>:/icons/kitchen.png</normaloff>:/icons/kitchen.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_turnoff_btn">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>210</y>
+      <width>281</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string> Turn off all light</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../res.qrc">
+      <normaloff>:/icons/turnoff.png</normaloff>:/icons/turnoff.png</iconset>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>25</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Light</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>280</y>
+     <width>321</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="m_cancel_btn">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Cancel</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../res.qrc">
+        <normaloff>:/icons/close.png</normaloff>:/icons/close.png</iconset>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

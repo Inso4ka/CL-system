@@ -9,6 +9,7 @@ SmartHomeSystem::SmartHomeSystem(boost::asio::io_service &io_service)
 bool SmartHomeSystem::checkConnection(const std::string &ip, const std::string &port)
 {
     m_condition = false;
+
     // Проверка корректности IP-адреса
     boost::system::error_code ipAddressError;
     boost::asio::ip::address_v4::from_string(ip, ipAddressError);
@@ -53,7 +54,14 @@ std::string SmartHomeSystem::start(const std::string &str)
         return handle_command(str);
     else if (str.find("temperature") != std::string::npos)
         return handle_command(str);
-
+    else if (str == "living_room")
+        return handle_command(str);
+    else if (str == "bathroom")
+        return handle_command(str);
+    else if (str == "kitchen")
+        return handle_command(str);
+    else if (str == "turnoff")
+        return handle_command(str);
     return "";
 }
 
@@ -71,77 +79,6 @@ std::string SmartHomeSystem::receive_response() {
     } else {
         return std::string(buffer.data(), bytes_transferred);
     }
-}
-
-// Реализация обработчика для управления освещением
-void SmartHomeSystem::handle_light() {
-    bool is_running = true;
-    int  option;
-
-    while (is_running) {
-        // Выводим доступные опции для управления освещением
-        std::cout << "Turn on/off light\n"
-                  << "1. living room\n"
-                  << "2. kitchen\n"
-                  << "3. bathroom\n"
-                  << "4. turn off light\n"
-                  << "5. cancel\n\n";
-        std::cout << "Choose a place to turn on/off the light: ";
-        std::cin >> option;
-
-        switch (option) {
-            // Отправляем команду на сервер в зависимости от выбранной опции
-            case 1:
-                handle_command("living_room");
-                break;
-            case 2:
-                handle_command("kitchen");
-                break;
-            case 3:
-                handle_command("bathroom");
-                break;
-            case 4:
-                handle_command("turnoff");
-                break;
-            // Выходим из цикла при выборе опции отмены
-            case 5:
-                is_running = false;
-                std::cout << "Canceling the operation.\n\n";
-                break;
-            default:
-                std::cout << "Invalid option.\n";
-                break;
-        }
-    }
-}
-
-// Реализация обработчика для управления колонкой
-void SmartHomeSystem::handle_column() {
-    handle_command("column");
-}
-
-// Реализация обработчика для управления системой безопасности
-void SmartHomeSystem::handle_security() {
-    handle_command("security");
-}
-
-// Реализация обработчика для управления температурой
-void SmartHomeSystem::handle_temperature() {
-    int num;
-    do {
-        std::cout << "Enter the desired temperature (in degrees Celsius [-10 : 40]): ";
-        std::cin >> num;
-        if (std::cin.fail()) {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        }
-    } while (num < -10 || num > 40);
-    handle_command("temperature" + std::to_string(num));
-}
-
-// Реализация обработчика для вывода информации о состоянии системы
-void SmartHomeSystem::handle_show_conditions() {
-    handle_command("show");
 }
 
 // Реализация общего обработчика команд

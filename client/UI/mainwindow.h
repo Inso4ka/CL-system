@@ -6,6 +6,7 @@
 #include <QtConcurrent/QtConcurrent>
 #include "client/client.h"
 #include "connection.h"
+#include "light.h"
 #include "temperature.h"
 
 namespace Ui {
@@ -37,11 +38,16 @@ private slots:
 
     void onTemperatureValueChanged(int value);
 
+    void onLightChanged(int value);
+
+    void on_m_light_btn_clicked();
+
 private:
     Ui::MainWindow *ui;
     SmartHomeSystem m_system;
     Connection *m_window;
     Temperature *m_temp;
+    Light *m_light;
     std::string getCommandString(const std::string &command);
 };
 

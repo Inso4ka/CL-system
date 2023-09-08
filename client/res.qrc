@@ -10,5 +10,9 @@
         <file>icons/options.png</file>
         <file>icons/close.png</file>
         <file>icons/connect.png</file>
+        <file>icons/bathroom.png</file>
+        <file>icons/kitchen.png</file>
+        <file>icons/living_room.png</file>
+        <file>icons/turnoff.png</file>
     </qresource>
 </RCC>

@@ -20,7 +20,7 @@ private:
     tcp::socket m_socket;
     tcp::resolver               m_resolver;
     tcp::resolver::results_type m_endpoints;
-    bool m_condition;
+    bool m_condition = false;
 
     // Методы для обработки различных опций в приложении
 

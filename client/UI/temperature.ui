@@ -27,7 +27,7 @@
      <height>151</height>
     </rect>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -75,9 +75,27 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="m_temperature_lbl">
-         <property name="text">
-          <string/>
+        <widget class="QLineEdit" name="m_temperature_le">
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(0, 0, 0, 0);
+border: none;
+color:rgba(255, 255, 255, 230);
+padding-bottom: 7px;</string>
+         </property>
+         <property name="dragEnabled">
+          <bool>false</bool>
+         </property>
+         <property name="placeholderText">
+          <string>0</string>
+         </property>
+         <property name="clearButtonEnabled">
+          <bool>false</bool>
          </property>
         </widget>
        </item>

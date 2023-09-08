@@ -17,7 +17,7 @@ Temperature::~Temperature()
 
 void Temperature::on_m_temperature_sl_valueChanged(int value)
 {
-    ui->m_temperature_lbl->setText(QString::number(value));
+    ui->m_temperature_le->setText(QString::number(value));
 }
 
 void Temperature::on_m_cancel_btn_clicked()
@@ -27,6 +27,16 @@ void Temperature::on_m_cancel_btn_clicked()
 
 void Temperature::on_m_connect_btn_clicked()
 {
-    m_value = ui->m_temperature_sl->value();
-    emit valueChanged(m_value);
+    QString temperatureInput = ui->m_temperature_le->text();
+    bool conversionOk;
+    int temperature = temperatureInput.toInt(&conversionOk);
+
+    if (conversionOk) {
+        ui->m_temperature_sl->setValue(temperature);
+        emit valueChanged(ui->m_temperature_sl->value());
+        close();
+    } else {
+        // Обработка, если преобразование не удалось
+        QMessageBox::critical(this, " Error", "Invalid number entered");
+    }
 }
