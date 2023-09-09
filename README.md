@@ -27,3 +27,5 @@ Key Features:
 The Smart Home Control Application prioritizes security and privacy by incorporating SHA-256 encryption algorithms for securing transmitted data. Additionally, when the security system is activated, the application automatically turns off all lights, sets the temperature to 20 degrees Celsius, and disables the speaker system, further enhancing the safety and security of your home.
 
 Take complete control of your smart home with the Smart Home Control Application, ensuring not only ease of use and convenience but also prioritizing the security and encryption of your data. Experience the power of a secure and intelligent home automation system today.
+
+<img width="527" alt="image" src="https://github.com/Inso4ka/CL-system/assets/109118427/ddc5d5ec-c48e-4cf1-8873-a9674b0a17d1">
