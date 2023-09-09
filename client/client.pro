@@ -5,25 +5,31 @@ QT += widgets
 
 ICON = /Users/mac/Documents/Projects/cpp_projects/CL-system/main_icon/1.icns
 
+INCLUDEPATH += ../shared
+INCLUDEPATH += /opt/homebrew/Cellar/boost/1.81.0_1/include/
 
 SOURCES += UI/main.cpp \
     UI/mainwindow.cpp \
     UI/connection.cpp \
     client/client.cpp \
     UI/temperature.cpp \
-    UI/light.cpp
+    UI/light.cpp \
+    ../shared/hashfunc.cpp
+
 
 HEADERS += \
     UI/mainwindow.h \
     UI/connection.h \
     client/client.h \
     UI/temperature.h \
-    UI/light.h
+    UI/light.h \
+    ../shared/hashfunc.h
 
 
 
 
-INCLUDEPATH += /opt/homebrew/Cellar/boost/1.81.0_1/include/
+
+
 
 FORMS += \
     UI/connection.ui \

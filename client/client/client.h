@@ -1,7 +1,9 @@
 #pragma once
 
-#include <boost/asio.hpp>   // Подключение библиотеки Boost.Asio
-#include <iostream>         // Подключение библиотеки для ввода/вывода
+#include "hashfunc.h"
+#include <boost/asio.hpp> // Подключение библиотеки Boost.Asio
+#include <iostream> // Подключение библиотеки для ввода/вывода
+#include <unordered_set>
 
 using boost::asio::ip::tcp; // Пространство имен для работы с протоколом TCP
 

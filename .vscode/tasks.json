@@ -40,19 +40,18 @@
             "args": [
                 "-std=c++17",
                 "-g",
+                "-I../shared",
                 "-I/opt/homebrew/Cellar/boost/1.81.0_1/include/",
                 "-I/opt/homebrew/Cellar/sqlite/3.42.0/include/",
-                "-o",
-                "out/server",
-                "server/main.cpp",
-                "server/lightDatabase.cpp",
-                "server/securityDatabase.cpp",
-                "server/temperatureDatabase.cpp",
-                "server/columnDatabase.cpp",
                 "-L/opt/homebrew/Cellar/boost/1.81.0_1/lib",
                 "-L/opt/homebrew/Cellar/sqlite/3.42.0/lib/",
-                "-lsqlite3"
+                "-lsqlite3",
+                "-o",
+                "out/server",
+                "shared/*.cpp",
+                "server/*.cpp"
             ],
+            
             "options": {
                 "env": {
                     "DYLD_LIBRARY_PATH": "/opt/homebrew/Cellar/sqlite/3.42.0/lib/",

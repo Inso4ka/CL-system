@@ -46,22 +46,24 @@ bool SmartHomeSystem::getCondition()
 // Реализация метода start()
 std::string SmartHomeSystem::start(const std::string &str)
 {
-    if (str == "security")
-        return handle_command(str);
-    else if (str == "column")
-        return handle_command(str);
-    else if (str == "show")
-        return handle_command(str);
-    else if (str.find("temperature") != std::string::npos)
-        return handle_command(str);
-    else if (str == "living_room")
-        return handle_command(str);
-    else if (str == "bathroom")
-        return handle_command(str);
-    else if (str == "kitchen")
-        return handle_command(str);
-    else if (str == "turnoff")
-        return handle_command(str);
+    SHA256 sha;
+    if (str.find("temperature") != std::string::npos) {
+        std::string modifiedStr = str;
+        modifiedStr.erase(0, modifiedStr.find("temperature") + strlen("temperature"));
+        sha.update("temperature");
+        uint8_t *digest = sha.digest();
+        return handle_command(SHA256::toString(digest) + modifiedStr);
+    }
+    static const std::unordered_set<std::string> validStrings
+        = {"security", "column", "show", "living_room", "bathroom", "kitchen", "turnoff"};
+
+    sha.update(str);
+    uint8_t *digest = sha.digest();
+
+    if (validStrings.count(str) > 0) {
+        return handle_command(SHA256::toString(digest));
+    }
+
     return "";
 }
 
