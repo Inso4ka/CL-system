@@ -24,6 +24,7 @@ The Smart Home Control Application prioritizes security and privacy by incorpora
 Take complete control of your smart home with the Smart Home Control Application, ensuring not only ease of use and convenience but also prioritizing the security and encryption of your data. Experience the power of a secure and intelligent home automation system today.
 
 <p align="center">
-  <img width="527" alt="image" src="https://github.com/Inso4ka/CL-system/assets/109118427/ddc5d5ec-c48e-4cf1-8873-a9674b0a17d1">
+  <img width="527" alt="image" src="https://github.com/Inso4ka/CL-system/assets/109118427/13a20eaf-202c-4393-862f-eddf7483351a">
 </p>
+
 
