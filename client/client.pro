@@ -6,7 +6,7 @@ QT += widgets
 ICON = /Users/mac/Documents/Projects/cpp_projects/CL-system/main_icon/1.icns
 
 INCLUDEPATH += ../shared
-INCLUDEPATH += /opt/homebrew/Cellar/boost/1.81.0_1/include/
+INCLUDEPATH += /opt/homebrew/Cellar/boost/1.85.0/include/
 
 SOURCES += UI/main.cpp \
     UI/mainwindow.cpp \
