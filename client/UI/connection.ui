@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>260</width>
+    <width>294</width>
     <height>381</height>
    </rect>
   </property>
@@ -19,6 +19,10 @@
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
     <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 60);
+border-radius: 10px;</string>
+     </property>
      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,2,0">
       <property name="spacing">
        <number>15</number>
@@ -32,7 +36,9 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: white</string>
+         <string notr="true">color: white;
+background-color : transparent; 
+border: none; </string>
         </property>
         <property name="text">
          <string>Connect to server</string>
@@ -78,7 +84,7 @@ selection-color: rgba(0, 0, 0, 0);
 selection-background-color: rgba(0, 0, 0, 0);
 padding: 2px;
 margin: 0px;
-
+border-radius: 0px;
 </string>
            </property>
            <property name="text">
@@ -112,6 +118,7 @@ selection-color: rgba(0, 0, 0, 0);
 selection-background-color: rgba(0, 0, 0, 0);
 padding: 2px;
 margin: 0px;
+border-radius: 0px;
 </string>
            </property>
            <property name="text">

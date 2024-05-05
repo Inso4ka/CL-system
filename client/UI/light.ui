@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>311</width>
-    <height>354</height>
+    <width>293</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,83 +16,80 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(41, 49, 51);</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout_5">
    <item>
-    <widget class="QWidget" name="widget" native="true">
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <property name="spacing">
-       <number>16</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="font">
-         <font>
-          <pointsize>25</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: white;</string>
-        </property>
-        <property name="text">
-         <string>Light</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QFrame" name="frame">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 0, 0, 80);
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_2">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 40);
 border-radius: 10px;</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout">
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
          <property name="spacing">
-          <number>12</number>
+          <number>16</number>
          </property>
          <item>
-          <widget class="QPushButton" name="m_livingroom_btn">
+          <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <pointsize>25</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: rgb(64,64,64);
-    border-radius: 10px; /* закругление краев */
-    padding: 10px; /* добавим немного отступа вокруг кнопки */
-    color: white; /* белый цвет текста */
-}
-
-QPushButton:hover {
-    background-color: rgb(128,128,128);
-}
-
-QPushButton:pressed {
-    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
-}
-</string>
+            <string notr="true">color: white;
+background-color : transparent; 
+border: none; </string>
            </property>
            <property name="text">
-            <string> Living room</string>
+            <string>Light</string>
            </property>
-           <property name="icon">
-            <iconset resource="../res.qrc">
-             <normaloff>:/icons/living_room.png</normaloff>:/icons/living_room.png</iconset>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="m_bathroom_btn">
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
+          <widget class="QFrame" name="frame">
            <property name="styleSheet">
-            <string notr="true">QPushButton {
+            <string notr="true">background-color: rgba(0, 0, 0, 80);
+border-radius: 10px;</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <property name="spacing">
+             <number>12</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="m_livingroom_btn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
     background-color: rgb(64,64,64);
     border-radius: 10px; /* закругление краев */
     padding: 10px; /* добавим немного отступа вокруг кнопки */
@@ -107,18 +104,108 @@ QPushButton:pressed {
     background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
 }
 </string>
-           </property>
-           <property name="text">
-            <string> Bathroom</string>
-           </property>
-           <property name="icon">
-            <iconset resource="../res.qrc">
-             <normaloff>:/icons/bathroom.png</normaloff>:/icons/bathroom.png</iconset>
-           </property>
+              </property>
+              <property name="text">
+               <string> Living room</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../res.qrc">
+                <normaloff>:/icons/living_room.png</normaloff>:/icons/living_room.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="m_bathroom_btn">
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+              </property>
+              <property name="text">
+               <string> Bathroom</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../res.qrc">
+                <normaloff>:/icons/bathroom.png</normaloff>:/icons/bathroom.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="m_kitchen_btn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+              </property>
+              <property name="text">
+               <string> Kitchen</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../res.qrc">
+                <normaloff>:/icons/kitchen.png</normaloff>:/icons/kitchen.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="m_turnoff_btn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: rgb(64,64,64);
+    border-radius: 10px; /* закругление краев */
+    padding: 10px; /* добавим немного отступа вокруг кнопки */
+    color: white; /* белый цвет текста */
+}
+
+QPushButton:hover {
+    background-color: rgb(128,128,128);
+}
+
+QPushButton:pressed {
+    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
+}
+</string>
+              </property>
+              <property name="text">
+               <string> Turn off all light</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../res.qrc">
+                <normaloff>:/icons/turnoff.png</normaloff>:/icons/turnoff.png</iconset>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="m_kitchen_btn">
+          <widget class="QPushButton" name="m_cancel_btn">
            <property name="styleSheet">
             <string notr="true">QPushButton {
     background-color: rgb(64,64,64);
@@ -137,71 +224,15 @@ QPushButton:pressed {
 </string>
            </property>
            <property name="text">
-            <string> Kitchen</string>
+            <string>Cancel</string>
            </property>
            <property name="icon">
             <iconset resource="../res.qrc">
-             <normaloff>:/icons/kitchen.png</normaloff>:/icons/kitchen.png</iconset>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="m_turnoff_btn">
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: rgb(64,64,64);
-    border-radius: 10px; /* закругление краев */
-    padding: 10px; /* добавим немного отступа вокруг кнопки */
-    color: white; /* белый цвет текста */
-}
-
-QPushButton:hover {
-    background-color: rgb(128,128,128);
-}
-
-QPushButton:pressed {
-    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
-}
-</string>
-           </property>
-           <property name="text">
-            <string> Turn off all light</string>
-           </property>
-           <property name="icon">
-            <iconset resource="../res.qrc">
-             <normaloff>:/icons/turnoff.png</normaloff>:/icons/turnoff.png</iconset>
+             <normaloff>:/icons/close.png</normaloff>:/icons/close.png</iconset>
            </property>
           </widget>
          </item>
         </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="m_cancel_btn">
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-    background-color: rgb(64,64,64);
-    border-radius: 10px; /* закругление краев */
-    padding: 10px; /* добавим немного отступа вокруг кнопки */
-    color: white; /* белый цвет текста */
-}
-
-QPushButton:hover {
-    background-color: rgb(128,128,128);
-}
-
-QPushButton:pressed {
-    background-color: #DDDDDD; /* еще светлее серый цвет при нажатии */
-}
-</string>
-        </property>
-        <property name="text">
-         <string>Cancel</string>
-        </property>
-        <property name="icon">
-         <iconset resource="../res.qrc">
-          <normaloff>:/icons/close.png</normaloff>:/icons/close.png</iconset>
-        </property>
        </widget>
       </item>
      </layout>
